@@ -1,0 +1,66 @@
+.Login-page{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.Login-page-card{
+    height:auto;
+    width: 320px;
+    border-radius: 20px;
+
+    background-color: aqua;
+    color: aqua;
+
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-start;
+
+    flex-direction: column;
+
+    padding: 10px;
+
+
+
+    div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        p{
+            font-size: 20px;
+            color: black;
+        }
+
+        input{
+            height: 50px;
+            width: 90%;
+    
+            border-radius: 20px;
+    
+            padding-left:10px;
+        }
+    }
+}
+.Buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button{
+        height: 30px;
+        width: 10%;
+
+        border-radius: 10px;
+
+        margin: 10px;
+    }
+}
