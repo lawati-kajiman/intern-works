@@ -2,6 +2,12 @@
 
 This project is made for practice purpose and is used for practice purpose only.
 
+## initializing **Demo-App**
+```
+git clone https://github.com/lawati-kajiman/intern-works.git 
+```
+- After clone you can do your stuff or can practice here. 
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -39,13 +45,13 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## projects that are done
+# projects that are done
 
 ### login-page
 This project includes a log-in  page and consist of clear and submit button which works as clearing input field and showing the value on-click respectively.
 
-this projects is mainly done focusing on `useState` 
-[click me] (https://legacy.reactjs.org/docs/hooks-state.html) to know more about `useState`.
+This projects is mainly done focusing on `useState`.
+[click me](https://legacy.reactjs.org/docs/hooks-state.html) to know more about `useState`.
 
 `navigation` to home page is also added while clicking the submit button.
 
@@ -55,12 +61,13 @@ This project include user profile with their **name** and **adress**.
 Data of user are stored in json file called **userdata.json** inside **data** folder.
 
 Data that are called using `required` is mapped in a `div` with the help of `map`.
-[click here ]()
+[click here ](https://www.pluralsight.com/guides/how-to-use-the-map()-function-to-export-javascript-in-react) to know more about `map`.
 
 `navigation` to movie page is also added while clicking the movie button.
 
 ### Movies-page
-
+This project is based on imdb rating for movies.
+`axios` is used to get the data from api and are being showed in a `div`. 
 
 ### Code Splitting
 
