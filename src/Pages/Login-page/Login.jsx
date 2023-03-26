@@ -5,6 +5,7 @@ import "./Login.scss";
 const Login = () => {
   const navigate=useNavigate();
   const [Inputtext, setInputtext] = useState({ username: "", password: "" });
+  // const [click, setclick] = useState(false);
 
 
   const handleChange = (e) => {
@@ -48,8 +49,17 @@ const Login = () => {
       <div className="Buttons">
         <button onClick={clear}>Clear</button>
         <button onClick={() => navigate("/Homepage")}>Log in</button>
-
+        {/* <button onClick={()=>setclick(true)}>submit</button> */}
       </div>
+      {/* {
+
+        click && (
+          <div>
+            <p>{Inputtext.username}</p>
+            <p>{Inputtext.password}</p>
+          </div>
+        )
+      } */}
     </>
   );
 };

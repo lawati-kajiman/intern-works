@@ -1,33 +1,29 @@
-import React, {useEffect,useState} from 'react'
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Movies = () => {
-    const [movies, setmovies] = useState([]);
+  const [movies, setmovies] = useState([]);
 
-    const getmovies = async () =>{
-        const response=await axios.get("https://api.themoviedb.org/3/movie/550?api_key=870b0f8430bb27fca6e67d20618df902")
-        console.log(response);
-        setmovies(response.data);
-    }
+  useEffect(() => {
+    axios
+    .get(
+      "http://www.omdbapi.com/?i=tt3896198&apikey=446b81e4"
+    )
+    .then((response) => {
+      const data=response.data
+      setmovies(data);
+      console.log(data)
+    });
+  }, []);
 
-    useEffect( () => {
-        getmovies([]);
-    },[])
-    
   return (
-    <div className='Movies-card'>
-     {
-        movies.map((movie)=>(
-          <div
-        className='movie-card'
-        key={movie.title}
-        >
-          <p>{movie.title}</p>
-          </div>
-        ))
-     }
+    <div className="Movies">
+     <p>{movies.Title}</p>
+     <img src={movies.Poster} alt={movies.title}/>
+     <p>{movies.Actors}</p>
+     <p>{movies.Type}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;

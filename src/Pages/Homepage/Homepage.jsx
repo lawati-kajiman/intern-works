@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Homepage.scss'
 const Homepage = () => {
   const navigate=useNavigate();
-    let datas=require("../../Data/Userdata.json");
+    const datas=require("../../Data/Userdata.json");
   return (
     <>
     <div className='Homepage'>        {
