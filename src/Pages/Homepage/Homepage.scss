@@ -1,0 +1,37 @@
+.Homepage{
+    flex: 1;
+
+    background-color: azure;
+
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    margin-top: 2rem;
+}
+
+.user-id{
+    width: 300px;
+
+    border-radius: 20px;
+
+    background-color: bisque;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    margin: 20px;
+}
+.movies{
+    height: 30px;
+    width: 100%;
+    cursor: pointer;
+    p{
+        cursor: pointer;
+    }
+}

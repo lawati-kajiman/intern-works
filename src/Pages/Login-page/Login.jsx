@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
 const Login = () => {
+  const navigate=useNavigate();
   const [Inputtext, setInputtext] = useState({ username: "", password: "" });
 
-  const [click, setClick] = useState(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -46,14 +47,8 @@ const Login = () => {
       </div>
       <div className="Buttons">
         <button onClick={clear}>Clear</button>
-        <button onClick={() => setClick(true)}>Submit</button>
+        <button onClick={() => navigate("/Homepage")}>Log in</button>
 
-        {click && (
-          <div>
-            <p>{Inputtext.username}</p>
-            <p>{Inputtext.password}</p>
-          </div>
-        )}
       </div>
     </>
   );

@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with my **Demo-App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is made for practice purpose and is used for practice purpose only.
 
 ## Available Scripts
 
@@ -39,11 +39,28 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## projects that are done
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### login-page
+This project includes a log-in  page and consist of clear and submit button which works as clearing input field and showing the value on-click respectively.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+this projects is mainly done focusing on `useState` 
+[click me] (https://legacy.reactjs.org/docs/hooks-state.html) to know more about `useState`.
+
+`navigation` to home page is also added while clicking the submit button.
+
+### Home-page
+This project include user profile with their **name** and **adress**.
+
+Data of user are stored in json file called **userdata.json** inside **data** folder.
+
+Data that are called using `required` is mapped in a `div` with the help of `map`.
+[click here ]()
+
+`navigation` to movie page is also added while clicking the movie button.
+
+### Movies-page
+
 
 ### Code Splitting
 
