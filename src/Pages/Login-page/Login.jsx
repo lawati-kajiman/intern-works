@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
-const Login = () => {
+const Login = ({addinputvalue}) => {
   const navigate=useNavigate();
   const [Inputtext, setInputtext] = useState({ username: "", password: "" });
-  // const [click, setclick] = useState(false);
+   const [click, setclick] = useState(false);
 
 
   const handleChange = (e) => {
@@ -15,6 +15,11 @@ const Login = () => {
       [e.target.name]: value,
     });
   };
+
+  const handleSubmit = () =>{
+    addinputvalue(Inputtext);
+    navigate("/Homepage")
+  }
   const clear = () => {
     setInputtext({ username: "", password: "" });
   };
@@ -48,10 +53,11 @@ const Login = () => {
       </div>
       <div className="Buttons">
         <button onClick={clear}>Clear</button>
-        <button onClick={() => navigate("/Homepage")}>Log in</button>
-        {/* <button onClick={()=>setclick(true)}>submit</button> */}
+        {/* <button onClick={() => navigate("/Homepage")}>Log in</button> */}
+        <button onClick={()=>setclick(true)}>submit</button> 
+         <button onClick={handleSubmit}>Login</button> 
       </div>
-      {/* {
+       {
 
         click && (
           <div>
@@ -59,7 +65,7 @@ const Login = () => {
             <p>{Inputtext.password}</p>
           </div>
         )
-      } */}
+      } 
     </>
   );
 };
