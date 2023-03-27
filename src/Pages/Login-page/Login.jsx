@@ -7,6 +7,13 @@ const Login = ({addinputvalue}) => {
   const [Inputtext, setInputtext] = useState({ username: "", password: "" });
    const [click, setclick] = useState(false);
 
+   const [isvalid, setisvalid] = useState("");
+
+   const validateemail=(Inputtext)=>{
+    const syntax=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     return syntax.test(Inputtext.username);
+
+   }
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -14,6 +21,8 @@ const Login = ({addinputvalue}) => {
       ...Inputtext,
       [e.target.name]: value,
     });
+    const valid =validateemail(Inputtext);
+    setisvalid(valid)
   };
 
   const handleSubmit = () =>{
@@ -30,7 +39,7 @@ const Login = ({addinputvalue}) => {
         <p>This is your login page </p>
         <div className="Login-page-card">
           <div>
-            <p> Username:</p>
+            <p> e-mail:</p>
             <input
               type="text"
               name="username"
@@ -38,6 +47,7 @@ const Login = ({addinputvalue}) => {
               value={Inputtext.username}
               onChange={handleChange}
             />
+            {isvalid ? <span className="valid">Valid email address</span> : <span className="invalid">Invalid email address</span>}
           </div>
           <div>
             <p> Password:</p>
@@ -55,7 +65,9 @@ const Login = ({addinputvalue}) => {
         <button onClick={clear}>Clear</button>
         {/* <button onClick={() => navigate("/Homepage")}>Log in</button> */}
         <button onClick={()=>setclick(true)}>submit</button> 
-         <button onClick={handleSubmit}>Login</button> 
+         {
+          isvalid ? <button onClick={handleSubmit}>Login</button> :<p>enter the correct format</p>
+         }
       </div>
        {
 
