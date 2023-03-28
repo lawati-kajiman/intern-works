@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Homepage.scss'
+import {Button} from "@mui/material"
 const Homepage = ({value}) => {
   
   const navigate=useNavigate();
@@ -34,7 +35,7 @@ const Homepage = ({value}) => {
       }
     </div>
     <div className='movies'>
-      <p onClick={()=>navigate("/Movies")}>Movies</p>
+      <Button variant='contained' onClick={()=>navigate("/Movies")}>Movies</Button>
     </div>
     </>
   )

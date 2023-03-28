@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import {Button} from "@mui/material"
 
 const Movies = () => {
+  const navigate=useNavigate();
   const [movies, setmovies] = useState([]);
 
   useEffect(() => {
@@ -22,6 +25,7 @@ const Movies = () => {
      <img src={movies.Poster} alt={movies.title}/>
      <p>{movies.Actors}</p>
      <p>{movies.Type}</p>
+     <Button variant="outlined" onClick={()=>navigate("/Game")}>game</Button>
     </div>
   );
 };

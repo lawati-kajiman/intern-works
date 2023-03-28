@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import "./Login.scss";
 
-const Login = ({addinputvalue}) => {
-  const navigate=useNavigate();
+const Login = ({ addinputvalue }) => {
+  const navigate = useNavigate();
   const [Inputtext, setInputtext] = useState({ username: "", password: "" });
-   const [click, setclick] = useState(false);
+  const [click, setclick] = useState(false);
 
-   const [isvalid, setisvalid] = useState("");
+  const [isvalid, setisvalid] = useState("");
 
-   const validateemail=(Inputtext)=>{
-    const syntax=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-     return syntax.test(Inputtext.username);
-
-   }
+  const validateemail = (Inputtext) => {
+    const syntax = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return syntax.test(Inputtext.username);
+  };
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -21,14 +24,14 @@ const Login = ({addinputvalue}) => {
       ...Inputtext,
       [e.target.name]: value,
     });
-    const valid =validateemail(Inputtext);
-    setisvalid(valid)
+    const valid = validateemail(Inputtext);
+    setisvalid(valid);
   };
 
-  const handleSubmit = () =>{
+  const handleSubmit = () => {
     addinputvalue(Inputtext);
-    navigate("/Homepage")
-  }
+    navigate("/Homepage");
+  };
   const clear = () => {
     setInputtext({ username: "", password: "" });
   };
@@ -38,8 +41,8 @@ const Login = ({addinputvalue}) => {
       <div className="Login-page">
         <p>This is your login page </p>
         <div className="Login-page-card">
-          <div>
-            <p> e-mail:</p>
+          {/* <form>
+            <label> e-mail:</label>
             <input
               type="text"
               name="username"
@@ -47,10 +50,14 @@ const Login = ({addinputvalue}) => {
               value={Inputtext.username}
               onChange={handleChange}
             />
-            {isvalid ? <span className="valid">Valid email address</span> : <span className="invalid">Invalid email address</span>}
-          </div>
-          <div>
-            <p> Password:</p>
+            {isvalid ? (
+              <span className="valid">Valid email address</span>
+            ) : (
+              <span className="invalid">Invalid email address</span>
+            )}
+          </form>
+          <form>
+            <label> Password:</label>
             <input
               type="password"
               name="password"
@@ -58,26 +65,37 @@ const Login = ({addinputvalue}) => {
               value={Inputtext.password}
               onChange={handleChange}
             />
-          </div>
+          </form> */}
+          <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch',},
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField type="text" id="outlined-basic" label="E-mail" variant="outlined" name="username" value={Inputtext.username} onChange={handleChange}/>
+      <TextField type="password" id="outlined-basic" label="Password" variant="outlined" name="password" value={Inputtext.password} onChange={handleChange}/>
+    </Box>
+
         </div>
       </div>
-      <div className="Buttons">
-        <button onClick={clear}>Clear</button>
+      <Stack spacing={2} direction="row" className="Stack" >
+      <Button variant="contained" onClick={clear}>Clear</Button>
         {/* <button onClick={() => navigate("/Homepage")}>Log in</button> */}
-        <button onClick={()=>setclick(true)}>submit</button> 
-         {
-          isvalid ? <button onClick={handleSubmit}>Login</button> :<p>enter the correct format</p>
-         }
-      </div>
-       {
-
-        click && (
-          <div>
-            <p>{Inputtext.username}</p>
-            <p>{Inputtext.password}</p>
-          </div>
-        )
-      } 
+        <Button variant="contained" onClick={() => setclick(true)}>submit</Button>
+        {isvalid ? (
+          <Button variant="contained" onClick={handleSubmit}>Login</Button>
+        ) : (
+          <p>enter the correct format</p>
+        )}
+      </Stack>
+      {click && (
+        <div>
+          <p>{Inputtext.username}</p>
+          <p>{Inputtext.password}</p>
+        </div>
+      )}
     </>
   );
 };
