@@ -66,8 +66,20 @@ Data that are called using `required` is mapped in a `div` with the help of `map
 `navigation` to movie page is also added while clicking the movie button.
 
 ### Movies-page
-This project is based on imdb rating for movies.
+This project is based on imdb rating for movies .
 `axios` is used to get the data from api and are being showed in a `div`. 
+
+### Games-page
+This is a React component that fetches data from an API and displays it in a table using the `@mui/x-data-grid` component. Here's a breakdown of the code:
+
+- Import `React`, `useState`, `useEffect`, `axios`, and the `DataGrid` component from `@mui/x-data-grid`.
+- Define the Games component using an arrow function.
+- Declare a state variable called `onlinegames` using the `useState` hook. The initial value of this state variable is an empty array.
+- Define the `columns` array that defines the columns of the data grid. Each column has a `field` property that corresponds to a property in the data, a `headerName` property that is the header of the column, and a width property that is the `width` of the column.
+- Define the `rows` variable as the `onlinegames` state variable. This variable will be used as the rows of the data grid.
+- Define a `useEffect` hook that fetches data from the API when the component mounts. The `axios` library is used to make the API call, and the API key and host are included in the request headers. The `params` object includes the filters for the API call. When the API response is received, the data is parsed and set as the `onlinegames` state variable using the `setonlinegames` function.
+- Render the `DataGrid` component with the `rows`, `columns`, `pageSize`, `rowsPerPageOptions`, `checkboxSelection`, and `disableSelectionOnClick` props.
+Overall, this component fetches data from an API and displays it in a table using the `@mui/x-data-grid` component.
 
 ### Code Splitting
 
