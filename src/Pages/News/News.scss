@@ -1,0 +1,22 @@
+.search-and-button{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.news-feed{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    padding: 20px;
+
+    h1{
+        color: blue;
+        opacity: 60%;
+    }
+}
